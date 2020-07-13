@@ -60,8 +60,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'conut.urls'
 ROOT_HOSTCONF = 'conut.hosts'
 DEFAULT_HOST = 'www'
-DEFAULT_REDIRECT_URL = "http://www.conut.com" #kirr.co
-PARENT_HOST = "conut.com"
+DEFAULT_REDIRECT_URL = "https://conutapp.herokuapp.com" #kirr.co
+PARENT_HOST = "conutapp.herokuapp.com"
 
 TEMPLATES = [
     {
