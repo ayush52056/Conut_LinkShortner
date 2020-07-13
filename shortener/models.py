@@ -53,7 +53,8 @@ class conutURL(models.Model):
         return str(self.url)
 
     def get_short_url(self):
-        url_path = reverse("scode", kwargs={'shortcode': self.shortcode}, host='www', scheme='http')
+        url_path = 'conutapp.herokuapp.com/' + self.shortcode
+        #url_path = reverse("scode", kwargs={'shortcode': self.shortcode}, scheme='http')
         return url_path
 
 

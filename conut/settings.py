@@ -25,7 +25,7 @@ SECRET_KEY = 'aad8j!qck5tw0812vssje7kxgwj8w08ua$qbz3&$$xenfq2860'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['conut.com','www.conut.com','127.0.0.1','conutapp.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','conutapp.herokuapp.com']
 
 
 # Application definition
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #third party
-    'django_hosts',
+    # 'django_hosts',
 
     #custom app
     'analytics',
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django_hosts.middleware.HostsRequestMiddleware',
+    # 'django_hosts.middleware.HostsRequestMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,15 +54,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-     'django_hosts.middleware.HostsRequestMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    #  'django_hosts.middleware.HostsRequestMiddleware',
 ]
 
 ROOT_URLCONF = 'conut.urls'
-ROOT_HOSTCONF = 'conut.hosts'
-DEFAULT_HOST = 'www'
-DEFAULT_REDIRECT_URL = "https://conutapp.herokuapp.com" #kirr.co
-PARENT_HOST = "conutapp.herokuapp.com"
+# ROOT_HOSTCONF = 'conut.hosts'
+# DEFAULT_HOST = 'www'
+# DEFAULT_REDIRECT_URL = "https://conutapp.herokuapp.com" #kirr.co
+# PARENT_HOST = "conutapp.herokuapp.com"
 
 TEMPLATES = [
     {
@@ -136,4 +136,4 @@ STATIC_URL = '/static/'
 SHORTCODE_MAX = 15
 SHORTCODE_MIN = 6
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
