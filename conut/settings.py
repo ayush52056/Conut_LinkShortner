@@ -20,12 +20,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'aad8j!qck5tw0812vssje7kxgwj8w08ua$qbz3&$$xenfq2860'
-
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECRET_KEY = 'aad8j!qck5tw0812vssje7kxgwj8w08ua$qbz3&$$xenfq2860'
+SECRET_KEY = os.environ.get('SECRET_KEY', default='aad8j!qck5tw0812vssje7kxgwj8w08ua$qbz3&$$xenfq2860')
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','conutapp.herokuapp.com']
+# SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = False
+
+ALLOWED_HOSTS = ['127.0.0.1','*']
 
 
 # Application definition
@@ -92,6 +94,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+import dj_database_url
+db_from_env =dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -135,5 +140,8 @@ STATIC_URL = '/static/'
 
 SHORTCODE_MAX = 15
 SHORTCODE_MIN = 6
+if not DEBUG:    # Tell Django to copy statics to the `static files` directory
+    # in your application directory on Render.
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
