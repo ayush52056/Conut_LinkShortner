@@ -25,7 +25,7 @@ SECRET_KEY = 'aad8j!qck5tw0812vssje7kxgwj8w08ua$qbz3&$$xenfq2860'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['conut.com','www.conut.com','127.0.0.1']
+ALLOWED_HOSTS = ['conut.com','www.conut.com','127.0.0.1','conutapp.herokuapp.com']
 
 
 # Application definition
