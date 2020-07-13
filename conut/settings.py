@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #third party
-    'django_hosts',
+    # 'django_hosts',
 
     #custom app
     'analytics',
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django_hosts.middleware.HostsRequestMiddleware',
+    # 'django_hosts.middleware.HostsRequestMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,14 +54,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_hosts.middleware.HostsRequestMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'django_hosts.middleware.HostsRequestMiddleware',
 ]
 
 ROOT_URLCONF = 'conut.urls'
-ROOT_HOSTCONF = 'conut.hosts'
-DEFAULT_HOST = 'www'
-DEFAULT_REDIRECT_URL = "https://conutapp.herokuapp.com" #kirr.co
-PARENT_HOST = "conutapp.herokuapp.com"
+# ROOT_HOSTCONF = 'conut.hosts'
+# DEFAULT_HOST = 'www'
+# DEFAULT_REDIRECT_URL = "https://conutapp.herokuapp.com" #kirr.co
+# PARENT_HOST = "conutapp.herokuapp.com"
 
 TEMPLATES = [
     {
