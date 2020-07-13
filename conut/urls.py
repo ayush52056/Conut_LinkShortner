@@ -19,14 +19,14 @@ Including another URLconf
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
 # ]
-from django.conf.urls import url
+from django.urls import re_path
 from django.contrib import admin
 
 from shortener.views import HomeView, URLRedirectView
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view()),
-    url(r'^(?P<shortcode>[\w-]+)/$', URLRedirectView.as_view())#, name='scode'), 
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^$', HomeView.as_view()),
+    re_path(r'^(?P<shortcode>[\w-]+)/$', URLRedirectView.as_view())#, name='scode'),
 ]

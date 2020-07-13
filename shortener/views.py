@@ -24,7 +24,7 @@ class HomeView(View):
             "form": the_form,
             "bg_image": bg_image
         }
-        return render(request, "shortener/home.html", context) # Try Django 1.8 & 1.9 http://joincfe.com/youtube
+        return render(request, "shortener/home.html", context) 
 
     def post(self, request, *args, **kwargs):
         form = SubmitUrlForm(request.POST)
