@@ -3,9 +3,10 @@
 {% block styles %}
 <style>
 body {
-      background-color: #226268;
-      {% if bg_image %}background-image: url({{ bg_image }});{% endif %}
+      background-color: #092532;
+      background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
       background-size: cover;
+      
 
     }
 
@@ -16,22 +17,56 @@ body {
     .btn-link:hover {
       color: #000000;
     }
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 </style>
 
 {% endblock styles %}
-{% block content %}
 
-<h1 class="cover-heading">{{ title }}</h1>
-    <p class='lead'>Shorten that URL</p>
-<p class="lead">
-     <div class='col-sm-6 col-sm-offset-3'> 
-                <form method='POST' action='.'> {% csrf_token %}
-                    <!-- <input name='url' type='text' placeholder='Shorten your URL like http://www.codingforentrepreneurs.com' /> -->
-                    {{ form.as_p }}
-                    <input class='btn btn-primary' type='submit' value='Shorten &raquo;' >
-                </form>
-            </div>
+{% block content %}
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<header class="masthead mb-auto">
+  <div class="inner">
+    <h3 class="masthead-brand">{{title}}</h3>
+    <nav class="nav nav-masthead justify-content-center">
+      <a class="nav-link active" href="#">Home</a>
+      <a class="nav-link" href="#">Features</a>
+      <a class="nav-link" href="#">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">{{ title }}</h1>
+  <p class='lead'>Shorten that URL</p>
+  <p class="lead">
+   
+    <form method='POST' action='.'> {% csrf_token %}
+        {{ form.as_p }}
+        <input class='btn btn-primary' type='submit' value='Shorten &raquo;' >
+    </form>
+
 </p>
+</main>
+
+<footer class="mastfoot mt-auto">
+  
+</footer>
+</div>
+</body>
 
 
 {% endblock content %}

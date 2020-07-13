@@ -18,9 +18,9 @@ def home_view_fbv(request, *args, **kwargs):
 class HomeView(View):
     def get(self, request, *args, **kwargs):
         the_form = SubmitUrlForm()
-        bg_image = 'https://upload.wikimedia.org/wikipedia/commons/0/05/20100726_Kalamitsi_Beach_Ionian_Sea_Lefkada_island_Greece.jpg'
+        bg_image = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg'
         context = {
-            "title": "conut.co",
+            "title": "conut.com",
             "form": the_form,
             "bg_image": bg_image
         }
@@ -29,7 +29,7 @@ class HomeView(View):
     def post(self, request, *args, **kwargs):
         form = SubmitUrlForm(request.POST)
         context = {
-            "title": "conut.co",
+            "title": "conut.com",
             "form": form
         }
         template = "shortener/home.html"
