@@ -58,7 +58,7 @@ body {
     {% if object.clickevent.count %} 
         <p class="lead">Count: {{ object.clickevent.count }}</p> 
     {% endif %}
-    <p class="lead">Your link : <a class='btn btn-link '  href='{{ object.get_short_url }}'>{{ object.get_short_url }}</a></p>
+    <p class="lead">Your link : <a class='btn btn-link '  href='{{ object.get_short_url }}'>codonut.herokuapp.com/{{ object.get_short_url }}</a></p>
     <a class='btn btn-primary' href='/'>+ New</a>
   </main>
   <footer class="mastfoot mt-auto">
