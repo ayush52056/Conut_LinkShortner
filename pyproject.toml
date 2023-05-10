@@ -6,7 +6,7 @@ authors = ["ayush"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 certifi = "^2023.5.7"
 dj-database-url = "^2.0.0"
 django-hosts = "^5.2"
